@@ -63,6 +63,7 @@ func checkDifference(set []int64, i int, a, total int64) int64 {
 	return ret
 }
 
+// checkTriple does the same thing as checkDifference but for an additional dimension.
 func checkTriple(set []int64, i int, a, total int64) (int64, int64) {
 	for j, b := range set {
 		for k, c := range set {
