@@ -2,7 +2,6 @@
 
 ## Notes
 - For performance could use a `rune` to represent the char in policy
-- There is a probably a cleaner XOR representation for part 2
 
 ## Performance
 
