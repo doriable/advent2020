@@ -2,6 +2,7 @@
 
 ## Notes
 - Didn't develop an algo for removing consecutive elements in the "front" and "back" of the plane to find seat... but that should be fine...
+- Can use binary number instead
 
 ## Performance
 
