@@ -29,7 +29,6 @@ func main() {
 	}
 
 	sort.Ints(adapters)
-	// device := adapters[len(adapters)-1] + 3
 	jolts := 0
 	count := map[int]int{}
 
@@ -75,8 +74,8 @@ func main() {
 // }
 
 func getAllChains(adapters []int, set map[int]struct{}) int {
-	total := 0
 	skip := map[int]struct{}{}
+	total := 0
 	for i := len(adapters) - 1; i > 0; i-- {
 		a := adapters[i]
 		fmt.Printf("adapter: %v\n", a)
@@ -88,20 +87,28 @@ func getAllChains(adapters []int, set map[int]struct{}) int {
 		if three && two && one {
 			skip[a-1] = struct{}{}
 			skip[a-2] = struct{}{}
+			total += 2 * len(skip)
+			continue
 		}
 
 		if three && two {
 			skip[a-2] = struct{}{}
+			total += len(skip)
+			continue
 		}
 
 		if two && one {
 			skip[a-1] = struct{}{}
+			total += len(skip)
+			continue
 		}
 
 		if three && one {
 			skip[a-1] = struct{}{}
+			total += len(skip)
+			continue
 		}
+		fmt.Printf("total: %v\n", total)
 	}
-	fmt.Println(skip)
 	return total
 }
